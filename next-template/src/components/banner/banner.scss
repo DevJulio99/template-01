@@ -1,0 +1,27 @@
+*{
+    font-family: "Poppins", Helvetica, Arial, sans-serif;
+}
+
+.div-banner{
+    background-image: url('../../../public/bg-10.jpg');
+    background-size: cover;
+}
+
+.divider {
+    margin-top: 15px;
+    background: linear-gradient(to right, #50e590 50%, #0796c6 120%);
+    display: inline-block;
+    border: 0;
+    font-size: 0;
+    line-height: 0;
+    height: 3px !important;
+    max-width: 100px;
+    width: 100%;
+}
+
+.btn-gradient{
+    background: linear-gradient(to right, #50e590, #35c8a4);
+    &:hover{
+       background: #0796c6;
+    }
+}
