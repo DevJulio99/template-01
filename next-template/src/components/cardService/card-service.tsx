@@ -12,7 +12,7 @@ export const CardService: React.FC<{ title: string, price: string, children?: Re
        <button className="mt-[18px] rounded-[35px] uppercase py-[9px] px-[23px] w-full 
           transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
           cursor-pointer text-[15px] font-medium tracking-[0.12em] w-full max-w-[154px] text-sm">
-            order now
+            Solicitar
         </button>
         <div className="py-10 px-[27px]">
             {children}

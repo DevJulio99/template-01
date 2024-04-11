@@ -9,7 +9,7 @@ export default function Services() {
       <div className="py-[60px] px-[15px] text-center">
         <div className="mb-[50px]">
           <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl">
-            Pricing
+            Planes
           </h3>
           <div className="divider !mt-[20px]"></div>
           <div className="flex flex-wrap gap-[50px] mt-[30px]">
