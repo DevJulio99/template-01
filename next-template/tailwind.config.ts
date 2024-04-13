@@ -15,11 +15,15 @@ const config: Config = {
       },
       colors: {
         green_10: "#50e590",
+        blue_5: "#1cd8c9",
         blue_10: "#0796c6",
         black_10: "#25252c",
         gray_10: "#838386",
+        gray_15: "#c2c2c3",
         white_10: "#ededed",
-        gray_5: "#f2f3f9"
+        gray_5: "#f2f3f9",
+        transparent_black: "rgba(0, 0, 0, 0.4)",
+        linear: "linear-gradient(60deg, #50e590, #0796c6)"
       }
     },
   },

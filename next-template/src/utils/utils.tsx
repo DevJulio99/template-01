@@ -16,6 +16,17 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { AiOutlineUserSwitch } from "react-icons/ai";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaRegStar } from "react-icons/fa";
+import { FaQuoteLeft } from "react-icons/fa";
+import { FaCalendarDay } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoMdMailOpen } from "react-icons/io";
+import { LuCalendarClock } from "react-icons/lu";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { TiSocialInstagram } from "react-icons/ti";
+import { SiGmail } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export const icons = {
     bullhorn: FaBullhorn,
@@ -35,7 +46,18 @@ export const icons = {
     magnify: FaMagnifyingGlass,
     lineUser: AiOutlineUserSwitch,
     mailOutline: MdOutlineEmail,
-    star: FaRegStar
+    star: FaRegStar,
+    quoteLeft: FaQuoteLeft,
+    calendarDay: FaCalendarDay,
+    location: FaLocationDot,
+    phone: FaPhoneAlt,
+    mailOpenFont: IoMdMailOpen,
+    calendarClock: LuCalendarClock,
+    facebook: FaFacebookF,
+    twitter:  FaTwitter,
+    instagram: TiSocialInstagram,
+    gmail: SiGmail,
+    linkedin: FaLinkedinIn
 }
 
 export const getIcon = (size: number, color: string, icon: string) => {
