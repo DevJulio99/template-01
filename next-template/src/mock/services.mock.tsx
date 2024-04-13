@@ -1,36 +1,36 @@
 export const servicesMock = [
     {
        type: 'Basic',
-       price: '49.00',
+       price: '100.00',
        content: [
            {
-               description: 'Context Advertising',
+               description: 'Publicidad Contextual',
                icon: 'bullhorn'
            },
            {
-               description: 'Local SEO',
+               description: 'SEO Local',
                icon: 'mapMarker'
            },
            {
-               description: 'Content Marketing',
+               description: 'Marketing de Contenidos',
                icon: 'pen'
            },
            {
-               description: 'Rewriting',
+               description: 'Reescritura',
                icon: 'backupRestore'
            },
            {
-               description: 'Support by Phone & Email',
+               description: 'Soporte por Teléfono y Correo',
                icon: 'mailOpen'
            }
        ]
     },
     {
         type: 'Standard',
-        price: '69.00',
+        price: '150.00',
         content: [
             {
-                description: 'SMM',
+                description: 'Marketing en Redes Sociales',
                 icon: 'bullhorn'
             },
             {
@@ -38,59 +38,59 @@ export const servicesMock = [
                 icon: 'mail'
             },
             {
-                description: 'Web Design',
+                description: 'Diseño Web',
                 icon: 'desktop'
             },
             {
-                description: 'SEO Strategy',
+                description: 'Estrategia de SEO',
                 icon: 'microStrategy'
             },
             {
-                description: 'Daily Support',
+                description: 'Soporte Diario',
                 icon: 'headsetMic'
             }
         ]
      },
      {
         type: 'Gold',
-        price: '88.00',
+        price: '200.00',
         content: [
             {
-                description: 'Keyword Research',
+                description: 'Investigación de Palabras Clave',
                 icon: 'fileFind'
             },
             {
-                description: 'Brand Management',
+                description: 'Gestión de Marca',
                 icon: 'diamondOutline'
             },
             {
-                description: 'SEO Knowledge Database',
+                description: 'Base de Conocimientos de SEO',
                 icon: 'fileChart'
             },
             {
-                description: 'Copywriting',
+                description: 'Redacción de Contenidos',
                 icon: 'pen'
             },
             {
-                description: '24/7 Support',
+                description: 'Soporte 24/7',
                 icon: 'headsetMic'
             }
         ]
      },
      {
         type: 'Platinum',
-        price: '108.00',
+        price: '250.00',
         content: [
             {
-                description: 'Free Consultation',
+                description: 'Consulta Gratuita',
                 icon: 'msgOutline'
             },
             {
-                description: 'Search Engine Optimization',
+                description: 'Motores de Búsqueda',
                 icon: 'magnify'
             },
             {
-                description: 'Social Media Management',
+                description: 'Gestión en Redes Sociales',
                 icon: 'bullhorn'
             },
             {
@@ -98,7 +98,7 @@ export const servicesMock = [
                 icon: 'backupRestore'
             },
             {
-                description: 'Content Management',
+                description: 'Gestión de Contenidos',
                 icon: 'pen'
             }
         ]

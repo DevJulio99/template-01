@@ -12,7 +12,7 @@ export default function AboutUs() {
     },
     {
       id: 2,
-      title: "Aplicaciones Móviles",
+      title: "Desarrollo de Aplicaciones Móviles",
       description: `Desarrollamos aplicaciones móviles innovadoras y de alta calidad para iOS y Android que ayudan a las empresas a conectarse y comprometerse con sus clientes de manera efectiva.`,
       icon: "lineUser",
     },
@@ -52,6 +52,18 @@ export default function AboutUs() {
       description: `Diseñamos y desarrollamos sitios web profesionales y responsivos que son visualmente atractivos, fáciles de navegar y optimizados para motores de búsqueda.`,
       icon: "lineUser",
     },
+    {
+      id: 9,
+      title: "Mantenimiento de Sistemas",
+      description: `Proporcionamos servicios de mantenimiento continuo para asegurar el funcionamiento óptimo y la seguridad de los sistemas desarrollados.`,
+      icon: "lineUser",
+    },
+    {
+      id: 10,
+      title: "Servicios de Help Desk",
+      description: `Ofrecemos soporte técnico y atención al cliente especializada para resolver problemas y brindar asistencia rápida y efectiva a los usuarios.`,
+      icon: "lineUser",
+    },
   ];
   return (
     <>
@@ -62,16 +74,10 @@ export default function AboutUs() {
           </h3>
           <div className="divider !mt-[20px]"></div>
           <p className="font-light mt-2.5 text-black_10 tracking-[.02em] text-[19px] leading-[1.5]">
-            Trabajamos en áreas tan diversas como consultoría de software,
-            desarrollo web, aplicaciones móviles, marketing digital y diseño
-            gráfico.
+            Ofrecemos una amplia gama de servicios de outsourcing en áreas como desarrollo web, aplicaciones móviles, consultoría de software, marketing digital y diseño gráfico.
           </p>
           <p className="mt-[20px] tracking-[.02em] text-[15px] font-light text-gray_10 lg:text-base">
-            Nuestro equipo de especialistas siempre ofrece resultados destacados
-            combinando ideas creativas con nuestra vasta experiencia. Podemos
-            ayudarte a construir una presencia sólida y significativa en línea,
-            utilizando estrategias efectivas adaptadas a tus necesidades
-            específicas.
+            Nuestro equipo de especialistas combina ideas creativas con nuestra vasta experiencia en cada una de estas áreas para ofrecer resultados destacados. Trabajamos en conjunto contigo para construir una presencia sólida y significativa en línea, utilizando estrategias efectivas adaptadas a tus necesidades específicas.
           </p>
           <button
             className="mt-[25px] rounded-[35px] uppercase py-[9px] px-[30px] w-full 

@@ -3,28 +3,28 @@ import { getIcon } from "@/utils/utils";
 export default function OurProjects() {
   const projects = [
     {
-      description: "348% More Organic Traffic in 7 Days",
+      description: "Incrementamos el tráfico orgánico en solo unos días",
       img: "/images/gallery-01-project.jpg",
     },
     {
       description:
-        "How Manual Tasks Sabotage the Potential of Natural Search Marketers",
+        "Optimizando el potencial: Superando los desafíos en el Desarrollo de Aplicaciones",
       img: "/images/gallery-02-project.jpg",
     },
     {
-      description: "A Search Engine Based on Expert Documents",
+      description: "Optimización en motores de búsqueda para mejorar la eficiencia y experiencia del usuario",
       img: "/images/gallery-03-project.jpg",
     },
     {
-      description: "Enterprise SEO Tools: The Marketer’s Guide",
+      description: "Herramientas para Desarrollo de Sistemas Web: Maximizando la eficiencia en Desarrollo Web",
       img: "/images/gallery-04-project.jpg",
     },
     {
-      description: "SEO for Small Medical Practices",
+      description: "Optimizamos la Gestión de la Información",
       img: "/images/gallery-05-project.jpg",
     },
     {
-      description: "Information Retrieval Data Structures & Algorithms",
+      description: "Mejoramos la Identidad Visual: Diseño Gráfico para reforzar tu marca",
       img: "/images/gallery-06-project.jpg",
     },
   ];
@@ -52,7 +52,7 @@ export default function OurProjects() {
         <div className="w-full max-w-[726px] lg:max-w-[966px]">
           <div className="mb-[50px] md:mb-0">
             <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl">
-              Our Projects and Cases
+              Nuestra experiencia en proyectos y casos
             </h3>
             <div className="divider !mt-[30px]"></div>
             <div className="w-full flex justify-center mt-[30px]">
@@ -80,22 +80,20 @@ export default function OurProjects() {
           transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
           cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[245px] md:max-w-[261px]  text-sm md:mt-0 h-[56px]"
           >
-            Become Our Client
+            Únete a nosotros como Cliente
           </button>
         </div>
       </div>
 
       <div className="py-[60px] px-[15px] text-center container-testimonials">
         <h3 className="text-white font-bold tracking-[.02em] text-2xl">
-          Testimonials
+          Testimonios
         </h3>
         <div className="divider !mt-[20px]"></div>
         <div className="mt-[40px] text-justify">
           {getIcon(40, "#1cd8c9", "quoteLeft")}
           <p className="mt-[25px] text-[18px] font-light">
-            SEOStudio is the only agency that provides high quality online
-            marketing and promotion services. The members of their team are real
-            professionals in search engine optimization.
+            SEOStudio es reconocida por su excelencia en el desarrollo y mantenimiento de sistemas, así como en la provisión de asesoría y soporte especializado. Nuestro equipo está dedicado a asegurar que tus sistemas operen de manera eficiente y efectiva, ofreciendo soluciones adaptadas a tus necesidades particulares.
           </p>
         </div>
         <div className="flex mt-5">
@@ -167,12 +165,11 @@ export default function OurProjects() {
         <div className="w-full max-w-[726px] md:px-[15px] md:flex justify-between lg:max-w-[966px]">
           <div className="md:w-[272px] md:text-start lg:w-[291px]">
             <h3 className="text-white font-bold tracking-[.02em] text-2xl md:text-[28px]">
-              Newsletter
+              Boletín informativo
             </h3>
             <div className="divider !mt-[20px]"></div>
             <p className="tracking-[0.02em] text-[15px] font-light mb-[30px]">
-              Keep up with our always upcoming news, updates, and publications.
-              Enter your e-mail and subscribe to our newsletter.
+              Manténgase al tanto de nuestras últimas noticias, actualizaciones y publicaciones. Ingresa tu correo electrónico y suscríbete a nuestro boletín informativo.
             </p>
           </div>
 
@@ -181,7 +178,7 @@ export default function OurProjects() {
               <input
                 className="bg-transparent w-full focus:outline-0 text-black_10"
                 type="text"
-                placeholder="Enter your email"
+                placeholder="Ingrese su email"
               />
             </div>
             <button
@@ -189,7 +186,7 @@ export default function OurProjects() {
           transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
           cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[150px] text-sm h-[50px] md:max-w-[164px]"
             >
-              Subscribe
+              Suscribirse
             </button>
           </div>
         </div>

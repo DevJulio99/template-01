@@ -22,7 +22,7 @@ export default function OurTeam() {
   return (
     <div className="py-[60px]">
       <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl">
-        Our Team
+        Nuestro equipo
       </h3>
       <div className="divider !mt-[30px]"></div>
       {/* <Carousel swipeable={false}
