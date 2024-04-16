@@ -6,16 +6,19 @@ export default function Banner() {
     <div className="div-banner relative py-[60px] flex justify-center lg:py-[120px]">
       <div className="text-center px-[15px] md:max-w-[604px] lg:max-w-[774px]">
         <h1 className="text-[34px] leading-[1.2] font-bold md:text-[42px] md:leading-[1.45]">
-          Impulsamos tu presencia digital
+          Potenciamos tu negocio con soluciones en TI de alta calidad y a costos
+          competitivos
         </h1>
         <p className="text-2xl tracking-[.02em] leading-[1.45] font-extralight md:text-[28px]">
-          Potencia tu negocio con nuestra experiencia y lleva tu presencia
-          digital al siguiente nivel
+          Impulsamos tu empresa con desarrollo de software a medida, según
+          tus necesidades específicas, orientado a la optimización de los
+          procesos y mejora en los servicios.
         </p>
         <div className="divider md:!mt-[30px]"></div>
         <p className="leading-[1.5] text-[19px] font-light mt-2.5">
-          Permítenos elevar la imagen de tu empresa en línea, brindándote la
-          ventaja competitiva que necesitas para destacarte en tu sector
+          Nos dedicamos a brindar nuestros servicios de tecnología de
+          información, permitiendo que usted pueda enfocarse en hacer crecer su
+          negocio.
         </p>
         <div className="flex flex-wrap gap-[30px] mt-[25px] justify-center">
           <button

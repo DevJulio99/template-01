@@ -44,10 +44,14 @@ export default function Services() {
           <div className="text-center md:flex max-w-[736px] md:gap-[40px] md:px-[12px] lg:max-w-[966px]">
             <div className="md:text-start">
               <h3 className="text-2xl font-bold tracking-[.02em] md:text-[28px]">
-                ¿Buscas una consultoría especializada?
+                ¿Estás en busca de consultoría especializada?
               </h3>
               <p className="mt-[20px] text-[18px] leading-[1.6] font-light md:text-[19px]">
-                En SEOStudio, te ofrecemos una variedad de servicios diseñados para optimizar tu presencia en línea y mejorar tus estrategias digitales. Puedes realizar una consulta a través de WhatsApp.
+                En Studio, nos especializamos en una amplia gama de servicios de
+                outsourcing en desarrollo de software web, móvil, bases de datos
+                y más, adaptados para satisfacer las necesidades específicas de
+                tu empresa. ¡Contáctanos a través de WhatsApp y descubre cómo
+                podemos ayudarte a alcanzar tus objetivos tecnológicos!
               </p>
             </div>
             <div className="px-[8px] md:flex items-center">

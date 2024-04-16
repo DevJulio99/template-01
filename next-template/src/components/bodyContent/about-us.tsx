@@ -70,14 +70,23 @@ export default function AboutUs() {
       <div className="py-[60px] px-[15px] text-center flex flex-wrap justify-center">
         <div className="mb-[50px] max-w-[454px] md:text-start lg:max-w-[614px]">
           <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl md:text-[28px]">
-            Bienvenido a SEOStudio
+            Bienvenido a Studio
           </h3>
           <div className="divider !mt-[20px]"></div>
           <p className="font-light mt-2.5 text-black_10 tracking-[.02em] text-[19px] leading-[1.5]">
-            Ofrecemos una amplia gama de servicios de outsourcing en áreas como desarrollo web, aplicaciones móviles, consultoría de software, marketing digital y diseño gráfico.
+            Ofrecemos una amplia gama de servicios de outsourcing TI en áreas
+            como desarrollo web, aplicaciones móviles, base de datos,
+            consultoría de software, diseño gráfico y marketing digital.
           </p>
           <p className="mt-[20px] tracking-[.02em] text-[15px] font-light text-gray_10 lg:text-base">
-            Nuestro equipo de especialistas combina ideas creativas con nuestra vasta experiencia en cada una de estas áreas para ofrecer resultados destacados. Trabajamos en conjunto contigo para construir una presencia sólida y significativa en línea, utilizando estrategias efectivas adaptadas a tus necesidades específicas.
+            Nuestra organización se distingue por contar con profesionales
+            experimentados y versátiles en diversas tecnologías, desde
+            frameworks como React y Angular, base de datos y lenguajes de
+            programación como C# y Java, entre otros. Además, estamos
+            comprometidos con mantenernos actualizados en las últimas tendencias
+            y tecnologías del mercado, garantizando que su empresa tenga acceso
+            a las herramientas más avanzadas para alcanzar sus objetivos
+            tecnológicos y comerciales.
           </p>
           <button
             className="mt-[25px] rounded-[35px] uppercase py-[9px] px-[30px] w-full 

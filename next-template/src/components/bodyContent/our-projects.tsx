@@ -3,28 +3,33 @@ import { getIcon } from "@/utils/utils";
 export default function OurProjects() {
   const projects = [
     {
-      description: "Incrementamos el tráfico orgánico en solo unos días",
+      description:
+        "Superamos los desafíos en el desarrollo de aplicaciones utilizando tecnologías como React, Angular, Vue, Next y Nuxt",
       img: "/images/gallery-01-project.jpg",
     },
     {
       description:
-        "Optimizando el potencial: Superando los desafíos en el Desarrollo de Aplicaciones",
+        "Maximizamos la eficiencia en el desarrollo web con C#, Java y con un diseño gráfico innovador",
       img: "/images/gallery-02-project.jpg",
     },
     {
-      description: "Optimización en motores de búsqueda para mejorar la eficiencia y experiencia del usuario",
+      description:
+        "Optimizamos la gestión de la información con bases de datos y sistemas web a medida",
       img: "/images/gallery-03-project.jpg",
     },
     {
-      description: "Herramientas para Desarrollo de Sistemas Web: Maximizando la eficiencia en Desarrollo Web",
+      description:
+        "Reforzamos tu marca con diseños gráficos impactantes y páginas web diseñadas para destacar en el mercado",
       img: "/images/gallery-04-project.jpg",
     },
     {
-      description: "Optimizamos la Gestión de la Información",
+      description:
+        "Mejoramos la calidad y rendimiento de páginas web y aplicaciones móviles con nuestras soluciones de optimización",
       img: "/images/gallery-05-project.jpg",
     },
     {
-      description: "Mejoramos la Identidad Visual: Diseño Gráfico para reforzar tu marca",
+      description:
+        "Incrementamos la eficiencia con el uso de herramientas de Help Desk y optimización de bases de datos",
       img: "/images/gallery-06-project.jpg",
     },
   ];
