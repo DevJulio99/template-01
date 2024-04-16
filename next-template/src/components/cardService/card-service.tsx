@@ -14,7 +14,7 @@ export const CardService: React.FC<{ title: string, price: string, customClass?:
           cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[154px] text-sm">
             Solicitar
         </button>
-        <div className="py-10 px-[27px] lg:py-[50px] lg:px-[67px]">
+        <div className="py-10 px-[27px] lg:py-[50px] lg:px-[67px] xl:px-[27px] xl:py-[30px]">
             {children}
         </div>
     </div>

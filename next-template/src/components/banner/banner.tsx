@@ -3,12 +3,12 @@ import "./banner.scss";
 
 export default function Banner() {
   return (
-    <div className="div-banner relative py-[60px] flex justify-center lg:py-[120px]">
-      <div className="text-center px-[15px] md:max-w-[604px] lg:max-w-[774px]">
-        <h1 className="text-[34px] leading-[1.2] font-bold md:text-[42px] md:leading-[1.45]">
+    <div className="div-banner relative py-[60px] flex justify-center lg:py-[120px] xl:py-[130px]">
+      <div className="text-center px-[15px] md:max-w-[604px] lg:max-w-[774px] xl:max-w-[594px]">
+        <h1 className="text-[34px] leading-[1.2] font-bold md:text-[42px] md:leading-[1.45] xl:text-[60px]">
           Impulsamos tu presencia digital
         </h1>
-        <p className="text-2xl tracking-[.02em] leading-[1.45] font-extralight md:text-[28px]">
+        <p className="text-2xl tracking-[.02em] leading-[1.45] font-extralight md:text-[28px] xl:text-[34px]">
           Potencia tu negocio con nuestra experiencia y lleva tu presencia
           digital al siguiente nivel
         </p>

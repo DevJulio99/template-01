@@ -13,13 +13,14 @@ export default function Services() {
             Planes
           </h3>
           <div className="divider !mt-[20px]"></div>
-          <div className="flex flex-wrap gap-[50px] md:gap-0 mt-[30px] justify-center">
+          <div className="flex flex-wrap mt-[30px] justify-center">
+            <div className="w-full flex flex-wrap gap-[50px] md:gap-0 justify-center xl:max-w-[1206px]">
             {services.map((x, index) => (
               <div
                 key={index}
-                className="md:px-[15px] w-full md:max-w-[363px] mb-[50px] lg:max-w-[453px]"
+                className="md:px-[15px] w-full md:max-w-[363px] mb-[50px] lg:max-w-[453px] xl:max-w-[301px]"
               >
-                <CardService title={x.type} price={x.price} customClass="">
+                <CardService title={x.type} price={x.price}>
                   {x.content.map((c, _index) => (
                     <div
                       key={_index}
@@ -28,7 +29,7 @@ export default function Services() {
                       }`}
                     >
                       {getIcon(20, "#0796c6", c.icon)}
-                      <span className="text-black_10 text-[15px] leading-[1.6] font-light tracking-[0.02em] lg:text-base">
+                      <span className="text-black_10 text-[15px] leading-[1.6] font-light tracking-[0.02em] lg:text-base xl:text-start">
                         {c.description}
                       </span>
                     </div>
@@ -36,14 +37,16 @@ export default function Services() {
                 </CardService>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </div>
-      <div className="container-consultation py-[60px]">
+      <div className="container-consultation py-[60px] py-[100px]">
         <div className="px-[12px] flex justify-center">
-          <div className="text-center md:flex max-w-[736px] md:gap-[40px] md:px-[12px] lg:max-w-[966px]">
+          <div className="w-full text-center md:flex max-w-[736px] md:gap-[40px] md:px-[12px] 
+                          lg:max-w-[966px] xl:max-w-[1206px] xl:justify-between">
             <div className="md:text-start">
-              <h3 className="text-2xl font-bold tracking-[.02em] md:text-[28px]">
+              <h3 className="text-2xl font-bold tracking-[.02em] md:text-[28px] xl:text-[34px]">
                 ¿Buscas una consultoría especializada?
               </h3>
               <p className="mt-[20px] text-[18px] leading-[1.6] font-light md:text-[19px]">
