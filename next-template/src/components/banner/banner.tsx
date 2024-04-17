@@ -3,22 +3,19 @@ import "./banner.scss";
 
 export default function Banner() {
   return (
-    <div className="div-banner relative py-[60px] flex justify-center lg:py-[120px]">
-      <div className="text-center px-[15px] md:max-w-[604px] lg:max-w-[774px]">
-        <h1 className="text-[34px] leading-[1.2] font-bold md:text-[42px] md:leading-[1.45]">
-          Potenciamos tu negocio con soluciones en TI de alta calidad y a costos
-          competitivos
+    <div className="div-banner relative py-[60px] flex justify-center lg:py-[120px] xl:py-[130px]">
+      <div className="text-center px-[15px] md:max-w-[604px] lg:max-w-[774px] xl:max-w-[594px]">
+        <h1 className="text-[34px] leading-[1.2] font-bold md:text-[42px] md:leading-[1.45] xl:text-[60px]">
+          Studio Power
         </h1>
-        <p className="text-2xl tracking-[.02em] leading-[1.45] font-extralight md:text-[28px]">
-          Impulsamos tu empresa con desarrollo de software a medida, según
-          tus necesidades específicas, orientado a la optimización de los
-          procesos y mejora en los servicios.
+        <p className="text-2xl tracking-[.02em] leading-[1.45] font-extralight md:text-[28px] xl:text-[34px]">
+          Potenciamos tu negocio con soluciones en TI de alta calidad y a un
+          costo conveniente
         </p>
         <div className="divider md:!mt-[30px]"></div>
         <p className="leading-[1.5] text-[19px] font-light mt-2.5">
-          Nos dedicamos a brindar nuestros servicios de tecnología de
-          información, permitiendo que usted pueda enfocarse en hacer crecer su
-          negocio.
+          Nos enfocamos en brindar servicios de tecnología de la información,
+          permitiéndote centrarte en hacer crecer tu negocio
         </p>
         <div className="flex flex-wrap gap-[30px] mt-[25px] justify-center">
           <button

@@ -13,45 +13,51 @@ export default function Services() {
             Planes
           </h3>
           <div className="divider !mt-[20px]"></div>
-          <div className="flex flex-wrap gap-[50px] md:gap-0 mt-[30px] justify-center">
-            {services.map((x, index) => (
-              <div
-                key={index}
-                className="md:px-[15px] w-full md:max-w-[363px] mb-[50px] lg:max-w-[453px]"
-              >
-                <CardService title={x.type} price={x.price} customClass="">
-                  {x.content.map((c, _index) => (
-                    <div
-                      key={_index}
-                      className={`flex gap-[20px] ${
-                        _index == 0 ? "" : "mt-[23px]"
-                      }`}
-                    >
-                      {getIcon(20, "#0796c6", c.icon)}
-                      <span className="text-black_10 text-[15px] leading-[1.6] font-light tracking-[0.02em] lg:text-base">
-                        {c.description}
-                      </span>
-                    </div>
-                  ))}
-                </CardService>
-              </div>
-            ))}
+          <div className="flex flex-wrap mt-[30px] justify-center">
+            <div className="w-full flex flex-wrap gap-[50px] md:gap-0 justify-center xl:max-w-[1206px]">
+              {services.map((x, index) => (
+                <div
+                  key={index}
+                  className="md:px-[15px] w-full md:max-w-[363px] mb-[50px] lg:max-w-[453px] xl:max-w-[301px]"
+                >
+                  <CardService title={x.type} price={x.price}>
+                    {x.content.map((c, _index) => (
+                      <div
+                        key={_index}
+                        className={`flex gap-[20px] ${
+                          _index == 0 ? "" : "mt-[23px]"
+                        }`}
+                      >
+                        {getIcon(20, "#0796c6", c.icon)}
+                        <span className="text-black_10 text-[15px] leading-[1.6] font-light tracking-[0.02em] lg:text-base xl:text-start">
+                          {c.description}
+                        </span>
+                      </div>
+                    ))}
+                  </CardService>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      <div className="container-consultation py-[60px]">
+      <div className="container-consultation py-[60px] py-[100px]">
         <div className="px-[12px] flex justify-center">
-          <div className="text-center md:flex max-w-[736px] md:gap-[40px] md:px-[12px] lg:max-w-[966px]">
+          <div
+            className="w-full text-center md:flex max-w-[736px] md:gap-[40px] md:px-[12px] 
+                          lg:max-w-[966px] xl:max-w-[1206px] xl:justify-between"
+          >
             <div className="md:text-start">
-              <h3 className="text-2xl font-bold tracking-[.02em] md:text-[28px]">
+              <h3 className="text-2xl font-bold tracking-[.02em] md:text-[28px] xl:text-[34px]">
                 ¿Estás en busca de consultoría especializada?
               </h3>
               <p className="mt-[20px] text-[18px] leading-[1.6] font-light md:text-[19px]">
                 En Studio, nos especializamos en una amplia gama de servicios de
-                outsourcing en desarrollo de software web, móvil, bases de datos
-                y más, adaptados para satisfacer las necesidades específicas de
-                tu empresa. ¡Contáctanos a través de WhatsApp y descubre cómo
-                podemos ayudarte a alcanzar tus objetivos tecnológicos!
+                outsourcing en desarrollo de software web, aplicaciones moviles,
+                bases de datos y más, adaptados para satisfacer las necesidades
+                específicas de tu empresa. ¡Contáctanos a través de WhatsApp y
+                descubre cómo podemos ayudarte a alcanzar tus objetivos
+                tecnológicos!
               </p>
             </div>
             <div className="px-[8px] md:flex items-center">

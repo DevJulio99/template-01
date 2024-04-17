@@ -27,6 +27,8 @@ import { FaTwitter } from "react-icons/fa";
 import { TiSocialInstagram } from "react-icons/ti";
 import { SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { HiMiniComputerDesktop } from "react-icons/hi2";
 
 export const icons = {
     bullhorn: FaBullhorn,
@@ -57,7 +59,9 @@ export const icons = {
     twitter:  FaTwitter,
     instagram: TiSocialInstagram,
     gmail: SiGmail,
-    linkedin: FaLinkedinIn
+    linkedin: FaLinkedinIn,
+    hamburger: GiHamburgerMenu,
+    miniComputer: HiMiniComputerDesktop
 }
 
 export const getIcon = (size: number, color: string, icon: string) => {
