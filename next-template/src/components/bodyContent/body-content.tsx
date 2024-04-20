@@ -12,7 +12,7 @@ export default function BodyContent() {
    <div className="pt-[56px]">
      <Banner />
      <AboutUs />
-     <Services />
+     {/* <Services /> */}
      <OurTeam />
      <OurProjects />
      <ContactUs />

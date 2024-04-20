@@ -6,63 +6,51 @@ export default function AboutUs() {
   const aboutServices = [
     {
       id: 1,
-      title: "Desarrollo de Sistemas Web",
-      description: `Creamos sistemas web a medida que proporcionan funcionalidades específicas y una experiencia de usuario excepcional, adaptados a las necesidades únicas de cada negocio.`,
+      title: "Sistemas Web a Medida",
+      description: `Diseñamos y desarrollamos sistemas web personalizados que se adaptan a las necesidades específicas de su negocio, brindando una experiencia de usuario excepcional y funcionalidades que impulsan sus objetivos.`,
       icon: "search",
     },
     {
       id: 2,
-      title: "Desarrollo de Aplicaciones Móviles",
-      description: `Desarrollamos aplicaciones móviles innovadoras y de alta calidad para iOS y Android que ayudan a las empresas a conectarse y comprometerse con sus clientes de manera efectiva.`,
+      title: "Aplicaciones Móviles Innovadoras",
+      description: `Implementamos aplicaciones móviles de alta calidad para iOS y Android que le permiten interactuar de manera efectiva con sus clientes, fortalecer el compromiso y aumentar su competitividad.`,
       icon: "lineUser",
     },
     {
       id: 3,
-      title: "Consultoría TI",
-      description: `Ofrecemos asesoramiento en tecnologías de la información para optimizar la infraestructura y los procesos de TI, garantizando un funcionamiento fluido y seguro de los sistemas empresariales.`,
-      icon: "mailOutline",
+      title: "Sitios Web Dinámicos y Adaptables",
+      description: `Diseñamos y desarrollamos sitios web profesionales y responsivos que son visualmente atractivos, fáciles de navegar, optimizados para motores de búsqueda y generan conversiones.`,
+      icon: "lineUser",
     },
     {
       id: 4,
-      title: "Estrategia y transformación digital",
-      description: `Diseñamos estrategias digitales personalizadas para ayudar a las empresas a adaptarse y prosperar en el entorno digital actual, maximizando su potencial de crecimiento y eficiencia.`,
-      icon: "star",
+      title: "Mantenimiento de Sistemas Confiable",
+      description: `Brindamos servicios de mantenimiento continuo para garantizar el óptimo funcionamiento, la seguridad y el rendimiento de nuestros sistemas desarrollados, previniendo problemas y asegurando su tranquilidad.`,
+      icon: "lineUser",
     },
     {
       id: 5,
-      title: "Data Analytics",
-      description: `Utilizamos análisis de datos para extraer información valiosa de grandes conjuntos de datos, proporcionando información útil para la toma de decisiones estratégicas.`,
-      icon: "lineUser",
-    },
-    {
-      id: 6,
-      title: "Experiencia de usuario",
-      description: `Diseñamos experiencias digitales intuitivas y atractivas que satisfacen las necesidades y expectativas de los usuarios, mejorando la interacción y la retención.`,
-      icon: "lineUser",
-    },
-    {
-      id: 7,
-      title: "Diseño gráfico",
+      title: "Diseño Gráfico Impactante",
       description: `Creamos diseños visuales impactantes y cohesivos que reflejan la identidad de marca de una empresa y transmiten su mensaje de manera efectiva.`,
       icon: "lineUser",
     },
     {
+      id: 6,
+      title: "Servicios Help Desk de Calidad",
+      description: `Ofrecemos soporte técnico especializado y atención al cliente de primer nivel para resolver problemas de manera rápida y efectiva, brindando a sus usuarios una experiencia positiva y satisfactoria.`,
+      icon: "lineUser",
+    },
+    {
+      id: 7,
+      title: "Consultoría TI Especializada",
+      description: `Le brindamos asesoría experta en tecnologías de la información para optimizar su infraestructura y procesos de TI, garantizando un funcionamiento fluido, seguro y eficiente de sus sistemas empresariales.`,
+      icon: "mailOutline",
+    },
+    {
       id: 8,
-      title: "Páginas web",
-      description: `Diseñamos y desarrollamos sitios web profesionales y responsivos que son visualmente atractivos, fáciles de navegar y optimizados para motores de búsqueda.`,
-      icon: "lineUser",
-    },
-    {
-      id: 9,
-      title: "Mantenimiento de Sistemas",
-      description: `Proporcionamos servicios de mantenimiento continuo para asegurar el funcionamiento óptimo y la seguridad de los sistemas desarrollados.`,
-      icon: "lineUser",
-    },
-    {
-      id: 10,
-      title: "Servicios de Help Desk",
-      description: `Ofrecemos soporte técnico y atención al cliente especializada para resolver problemas y brindar asistencia rápida y efectiva a los usuarios.`,
-      icon: "lineUser",
+      title: "Estrategia Digital para el Éxito",
+      description: `Diseñamos estrategias digitales personalizadas que le ayudan a adaptarse y prosperar en el entorno digital actual, maximizando su potencial de crecimiento, eficiencia y rentabilidad.`,
+      icon: "star",
     },
   ];
   return (
@@ -74,12 +62,12 @@ export default function AboutUs() {
               Bienvenido a Studio
             </h3>
             <div className="divider !mt-[20px]"></div>
-            <p className="font-light mt-2.5 text-black_10 tracking-[.02em] text-[19px] leading-[1.5]">
+            <p className="font-light mt-2.5 text-black_10 tracking-[.02em] text-[19px] leading-[1.5] lg:text-justify">
               Ofrecemos una amplia gama de servicios de outsourcing TI en áreas
               como desarrollo web, aplicaciones móviles, base de datos,
               consultoría de software, diseño gráfico y marketing digital.
             </p>
-            <p className="mt-[20px] tracking-[.02em] text-[15px] font-light text-gray_10 lg:text-base">
+            <p className="mt-[20px] tracking-[.02em] text-[15px] font-light text-gray_10 lg:text-base lg:text-justify">
               Nuestra organización se distingue por contar con profesionales
               experimentados y versátiles en diversas tecnologías, desde React,
               Angular, Vue, base de datos y lenguajes de programación como C# y
