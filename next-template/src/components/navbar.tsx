@@ -1,5 +1,6 @@
 "use client";
 import { getIcon } from "@/utils/utils";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -14,6 +15,16 @@ export default function Navbar() {
     "proyectos",
     "contacto",
   ];
+
+  const smoothScrollTo = (target: any) => {
+    const element = document.getElementById(target);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
 
   useEffect(() => {
     handleResize();
@@ -46,6 +57,12 @@ export default function Navbar() {
       setShowBack((prev) => !prev);
     }, 200);
   };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div
@@ -65,19 +82,86 @@ export default function Navbar() {
               <p>Template</p>
             </span>
           </div>
-          {
-            isDesktop ? <div className="h-full">
-            <ul className="flex h-full">
-              {options.map((x, index) => (
-                <li className="relative flex items-center mx-5 lg:text-sm xl:text-base uppercase 
+          {isDesktop ? (
+            <div className="h-full">
+              <ul className="flex h-full">
+                {options.map((x, index) => (
+                  <li
+                    className="relative flex items-center mx-5 lg:text-sm xl:text-base uppercase 
                 tracking-[.02em] font-semibold before:content-[''] before:absolute before:h-[3px] 
                 before:bg-[#50e590] before:bottom-0 before:right-[100%] before:left-0 
                 before:transition-all before:duration-[250ms] before:opacity-100 transition-all 
-                duration-[250ms] hover:before:right-0 hover:text-green_10 cursor-pointer" key={index}>{x}</li>
-              ))}
-            </ul>
-          </div> : null
-          }
+                duration-[250ms] hover:before:right-0 hover:text-green_10 cursor-pointer"
+                    key={index}
+                  >
+                    {x === "home" ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToTop();
+                        }}
+                      >
+                        {x}
+                      </a>
+                    ) : x === "sobre nosotros" ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          smoothScrollTo("bienvenido");
+                        }}
+                      >
+                        {x}
+                      </a>
+                    ) : x === "servicios" ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          smoothScrollTo("servicios");
+                        }}
+                      >
+                        {x}
+                      </a>
+                    ) : x === "nuestro equipo" ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          smoothScrollTo("equipo");
+                        }}
+                      >
+                        {x}
+                      </a>
+                    ) : x === "proyectos" ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          smoothScrollTo("proyectos");
+                        }}
+                      >
+                        {x}
+                      </a>
+                    ) : x === "contacto" ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          smoothScrollTo("contacto");
+                        }}
+                      >
+                        {x}
+                      </a>
+                    ) : (
+                      <span>{x}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
         {showBack && !isDesktop ? (
           <div className="fixed w-full">

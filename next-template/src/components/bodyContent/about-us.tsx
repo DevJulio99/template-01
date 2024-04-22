@@ -55,11 +55,11 @@ export default function AboutUs() {
   ];
   return (
     <>
-      <div className="py-[60px] px-[15px] text-center flex flex-wrap justify-center xl:py-[100px]">
+      <div id="bienvenido" className="py-[60px] px-[15px] text-center flex flex-wrap justify-center xl:py-[100px]">
         <div className="flex flex-wrap justify-center xl:w-[1206px] xl:justify-between">
           <div className="mb-[50px] max-w-[454px] md:text-start lg:max-w-[614px] xl:max-w-[502px]">
             <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl md:text-[28px] xl:text-[34px]">
-              Bienvenido a Studio
+              Bienvenido a CODESTI
             </h3>
             <div className="divider !mt-[20px]"></div>
             <p className="font-light mt-2.5 text-black_10 tracking-[.02em] text-[19px] leading-[1.5] lg:text-justify">
@@ -94,7 +94,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="py-[60px] px-[15px] bg-gray_5 flex justify-center xl:py-[100px]">
+      <div id="servicios" className="py-[60px] px-[15px] bg-gray_5 flex justify-center xl:py-[100px]">
         <div className="w-full flex flex-wrap justify-between xl:justify-start max-w-[726px] md:px-[15px] lg:max-w-[966px] xl:max-w-[1206px] xl:px-0">
           {aboutServices.map((x, index) => (
             <article
