@@ -1,11 +1,61 @@
 "use client";
 import { getIcon } from "@/utils/utils";
+import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactUs() {
 
+  const [isVerified, setIsVerified] = useState(false);
+  const recaptchaRef = React.createRef<ReCAPTCHA>();
+
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+
+  const handleVerify = (token: string | null) => {
+    if (token) {
+      setIsVerified(true);
+    }
+  }
+
+  const clearConsole = () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.clear();
+        resolve(undefined);
+      }, 50);
+    });
+  };
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    if (allFieldsFilled) {
+      console.log('Información enviada');
+    } else {
+      if (!allFieldsFilled) {
+        window.alert('Por favor, complete todos los campos');
+      } else {
+        window.alert('Complete la verificación reCAPTCHA por favor');
+      }
+    }
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const emailBody = `${data.mensaje}
+    
+    Nombre: ${data.nombres} ${data.apellidos}
+    Correo: ${data.correo}
+    Celular: ${data.celular}    
+  `;
+
+    window.location.href = `mailto:devjulio26@gmail.com?subject=Mensaje de contacto&body=${encodeURIComponent(emailBody)}`;
+    await clearConsole();
+  };
+
   return (
     <>
-      <div className="py-[60px] px-[15px] flex justify-center xl:py-[100px]">
+      <div
+        id="contacto"
+        className="py-[60px] px-[15px] flex justify-center xl:py-[100px]"
+      >
         <div className="w-full max-w-[726px] md:px-[15px] lg:max-w-[966px] lg:flex gap-[31px] xl:max-w-[1206px] xl:gap-[102px]">
           <div className="mb-[50px] lg:w-[614px] xl:w-[673px]">
             <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl xl:text-[34px]">
@@ -18,7 +68,12 @@ export default function ContactUs() {
               redes sociales y correo electrónico. También puedes utilizar el
               formulario de contacto rápido que aparece a continuación.
             </p>
-            <form className="mt-5 md:flex flex-wrap justify-between">
+            <form
+              className="mt-5 md:flex flex-wrap justify-between"
+              // onSubmit={handleSubmit}
+              action="https://formsubmit.co/a2a0b1bfcc5cb6a34bd130c196134440"
+              method="POST"
+            >
               <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Nombres
@@ -27,6 +82,10 @@ export default function ContactUs() {
                   <input
                     className="w-full bg-transparent text-black_10"
                     type="text"
+                    name="nombres"
+                    onChange={(e) => {
+                      setAllFieldsFilled(e.target.value !== "");
+                    }}
                   />
                 </div>
               </div>
@@ -39,6 +98,10 @@ export default function ContactUs() {
                   <input
                     className="w-full bg-transparent text-black_10"
                     type="text"
+                    name="apellidos"
+                    onChange={(e) => {
+                      setAllFieldsFilled(e.target.value !== "");
+                    }}
                   />
                 </div>
               </div>
@@ -51,6 +114,10 @@ export default function ContactUs() {
                   <input
                     className="w-full bg-transparent text-black_10"
                     type="text"
+                    name="correo"
+                    onChange={(e) => {
+                      setAllFieldsFilled(e.target.value !== "");
+                    }}
                   />
                 </div>
               </div>
@@ -63,6 +130,10 @@ export default function ContactUs() {
                   <input
                     className="w-full bg-transparent text-black_10"
                     type="text"
+                    name="celular"
+                    onChange={(e) => {
+                      setAllFieldsFilled(e.target.value !== "");
+                    }}
                   />
                 </div>
               </div>
@@ -72,17 +143,34 @@ export default function ContactUs() {
                   Mensaje
                 </span>
                 <div className="rounded-[35px] bg-gray_5 py-[18px] px-[25px]">
-                  <textarea className="w-full bg-transparent text-black_10 !h-[107px]" />
+                  <textarea
+                    className="w-full bg-transparent text-black_10 !h-[107px]"
+                    name="mensaje"
+                    onChange={(e) => {
+                      setAllFieldsFilled(e.target.value !== "");
+                    }}
+                  />
                 </div>
               </div>
-            </form>
-            <button
-              className="my-[20px] rounded-[35px] uppercase py-[9px] px-[23px] w-full 
+              {/* <div className="mb-5 w-full grid place-items-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                  onChange={handleVerify}
+                />
+              </div> */}
+              <input type="hidden" name="_template" value="table"></input>
+              {/* <input type="hidden" name="_next" value="http://localhost:3000"></input> */}
+              <button
+                className="my-[20px] rounded-[35px] uppercase py-[9px] px-[23px] w-full 
           transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
           cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[210px] text-sm h-[46px] md:h-[56px]"
-            >
-              Enviar mensaje
-            </button>
+                type="submit"
+                disabled={!allFieldsFilled}
+              >
+                Enviar mensaje
+              </button>
+            </form>
           </div>
 
           <div className="flex flex-wrap justify-between lg:flex-1">

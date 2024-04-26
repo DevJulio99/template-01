@@ -78,11 +78,11 @@ export default function OurProjects() {
   }, []);
   return (
     <>
-      <div className="py-[60px] px-[15px] text-center flex justify-center xl:py-[100px]">
+      <div id="proyectos" className="py-[60px] px-[15px] text-center flex justify-center xl:py-[100px]">
         <div className="w-full max-w-[726px] lg:max-w-[966px] xl:max-w-[1206px]">
           <div className="mb-[50px] md:mb-0">
             <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl">
-              Nuestra experiencia en proyectos y casos
+              Nuestra experiencia en proyectos
             </h3>
             <div className="divider !mt-[30px]"></div>
             <div className="w-full flex justify-center mt-[30px]">
@@ -128,7 +128,7 @@ export default function OurProjects() {
             showArrows={false}
           >
             {testimonials.map((x, index) => (
-              <div key={index} className="lg:mr-[30px]">
+              <div key={index} className="lg:mr-[30px] text-white">
                 <div className="mt-[40px] text-justify">
                   {getIcon(40, "#1cd8c9", "quoteLeft")}
                   <p className="mt-[25px] text-[18px] font-light md:text-[20px]">
@@ -215,7 +215,7 @@ export default function OurProjects() {
               Boletín informativo
             </h3>
             <div className="divider !mt-[20px]"></div>
-            <p className="tracking-[0.02em] text-[15px] font-light mb-[30px]">
+            <p className="text-white tracking-[0.02em] text-[15px] font-light mb-[30px]">
               Manténgase al tanto de nuestras últimas noticias, actualizaciones
               y publicaciones. Ingresa tu correo electrónico y suscríbete a
               nuestro boletín informativo.
