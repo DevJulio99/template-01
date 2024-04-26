@@ -61,7 +61,7 @@ export default function OurTeam() {
     <>
       <div id="equipo" className="py-[60px] flex justify-center xl:py-[100px]">
         <div className="w-full text-center xl:max-w-[1206px]">
-          <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl text-2xl md:text-[28px] xl:text-[34px]">
+          <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl md:text-[28px] xl:text-[34px]">
             Nuestro equipo
           </h3>
           <div className="divider !mt-[30px] mb-[40px]"></div>
@@ -123,7 +123,7 @@ export default function OurTeam() {
           <p className="text-center">
             <span className="ticket-notice"> Hot!</span>
             <strong className="mr-[5px] text-[18px] md:text-[19px]">
-              CODESTI
+              Codesti
             </strong>
             <span className="font-light text-[18px] md:text-[19px]">
               es tu elección en el mundo del desarrollo y servicios de

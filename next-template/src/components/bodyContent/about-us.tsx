@@ -59,7 +59,7 @@ export default function AboutUs() {
         <div className="flex flex-wrap justify-center xl:w-[1206px] xl:justify-between">
           <div className="mb-[50px] max-w-[454px] md:text-start lg:max-w-[614px] xl:max-w-[502px]">
             <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl md:text-[28px] xl:text-[34px]">
-              Bienvenido a CODESTI
+              Bienvenido a Codesti
             </h3>
             <div className="divider !mt-[20px]"></div>
             <p className="font-light mt-2.5 text-black_10 tracking-[.02em] text-[19px] leading-[1.5] lg:text-justify">

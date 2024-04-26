@@ -6,7 +6,7 @@ export default function Banner() {
     <div className="div-banner relative py-[60px] flex justify-center lg:py-[120px] xl:py-[130px]">
       <div className="text-center px-[15px] md:max-w-[604px] lg:max-w-[774px] xl:max-w-[594px]">
         <h1 className="text-white text-[34px] leading-[1.2] font-bold md:text-[42px] md:leading-[1.45] xl:text-[60px]">
-          CODESTI
+          Codesti
         </h1>
         <p className="text-white text-2xl tracking-[.02em] leading-[1.45] font-extralight md:text-[28px] xl:text-[34px]">
           Potenciamos tu negocio con soluciones en TI de alta calidad y al alcance de todos

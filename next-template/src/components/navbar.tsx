@@ -77,10 +77,13 @@ export default function Navbar() {
                 {getIcon(40, "#25252c", "hamburger")}
               </span>
             ) : null}
-            <span className="text-xl pl-[6px] font-bold flex items-center gap-5">
+            {/* <span className="text-xl pl-[6px] font-bold flex items-center gap-5">
               <p>{getIcon(40, "#0796c6", "miniComputer")}</p>
               <p>Template</p>
-            </span>
+            </span> */}
+            <div className="text-xl pl-[6px] font-bold gap-5">
+              <img className="w-[150px] h-auto" src="../../../codesti.svg" alt="codesti-logo"/>
+            </div>
           </div>
           {isDesktop ? (
             <div className="h-full">

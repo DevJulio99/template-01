@@ -52,7 +52,7 @@ export default function Services() {
                 ¿Estás en busca de consultoría especializada?
               </h3>
               <p className="mt-[20px] text-[18px] leading-[1.6] font-light md:text-[19px]">
-                En CODESTI, nos especializamos en una amplia gama de servicios de
+                En Codesti, nos especializamos en una amplia gama de servicios de
                 outsourcing en desarrollo de software web, aplicaciones moviles,
                 bases de datos y más, adaptados para satisfacer las necesidades
                 específicas de tu empresa. ¡Contáctanos a través de WhatsApp y
