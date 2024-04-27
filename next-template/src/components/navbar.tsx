@@ -183,6 +183,23 @@ export default function Navbar() {
                   key={index}
                   className="block w-full py-[11px] px-4 uppercase font-semibold
                          tracking-[.02em] cursor-pointer hover:bg-green_10 hover:text-white"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handle();
+                    if(x === 'home'){
+                      scrollToTop();
+                      return
+                    }
+                    if(x === 'sobre nosotros'){
+                      smoothScrollTo('bienvenido');
+                      return
+                    }
+                    if(x === 'nuestro equipo'){
+                      smoothScrollTo('equipo');
+                      return
+                    }
+                    smoothScrollTo(x);
+                  }}
                 >
                   {x}
                 </span>

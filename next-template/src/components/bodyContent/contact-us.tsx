@@ -2,11 +2,22 @@
 import { getIcon } from "@/utils/utils";
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import InputCondesti from "../input/inputCodesti";
+import { PATTER_CELL_PHONE, PATTER_EMAIL } from "@/utils/constants";
+import TexAreaCondesti from "../textArea/textAreaCodesti";
 
 export default function ContactUs() {
 
   const [isVerified, setIsVerified] = useState(false);
+  const [focusAll, setFocusAll] = useState(false);
   const recaptchaRef = React.createRef<ReCAPTCHA>();
+  const [validateFormError, setValidateError] = useState({
+    name: true,
+    lastname: true,
+    email: true,
+    cellphone: true,
+    message: true
+  });
 
   const [allFieldsFilled, setAllFieldsFilled] = useState(false);
 
@@ -25,29 +36,40 @@ export default function ContactUs() {
     });
   };
 
+  const handleFocus = () => {
+    setFocusAll(true);
+    setTimeout(() => {
+      setFocusAll(false);
+    }, 0);
+  }
+
   const handleSubmit = async (event: any) => {
+    const formValid = Object.values(validateFormError).every(x => !x);
+    handleFocus();
     event.preventDefault();
-    if (allFieldsFilled) {
-      console.log('Información enviada');
-    } else {
-      if (!allFieldsFilled) {
-        window.alert('Por favor, complete todos los campos');
+    if(formValid){
+      if (allFieldsFilled) {
+        console.log('Información enviada');
       } else {
-        window.alert('Complete la verificación reCAPTCHA por favor');
+        if (!allFieldsFilled) {
+          window.alert('Por favor, complete todos los campos');
+        } else {
+          window.alert('Complete la verificación reCAPTCHA por favor');
+        }
       }
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData.entries());
+  
+      const emailBody = `${data.mensaje}
+      
+      Nombre: ${data.nombres} ${data.apellidos}
+      Correo: ${data.correo}
+      Celular: ${data.celular}    
+    `;
+  
+      window.location.href = `mailto:devjulio26@gmail.com?subject=Mensaje de contacto&body=${encodeURIComponent(emailBody)}`;
+      await clearConsole();
     }
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
-
-    const emailBody = `${data.mensaje}
-    
-    Nombre: ${data.nombres} ${data.apellidos}
-    Correo: ${data.correo}
-    Celular: ${data.celular}    
-  `;
-
-    window.location.href = `mailto:devjulio26@gmail.com?subject=Mensaje de contacto&body=${encodeURIComponent(emailBody)}`;
-    await clearConsole();
   };
 
   return (
@@ -70,11 +92,12 @@ export default function ContactUs() {
             </p>
             <form
               className="mt-5 md:flex flex-wrap justify-between"
-              // onSubmit={handleSubmit}
-              action="https://formsubmit.co/a2a0b1bfcc5cb6a34bd130c196134440"
+              onSubmit={handleSubmit}
+              // action="https://formsubmit.co/a2a0b1bfcc5cb6a34bd130c196134440"
               method="POST"
             >
-              <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
+              <InputCondesti id="name" label="Nombres" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required/>
+              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Nombres
                 </span>
@@ -88,9 +111,10 @@ export default function ContactUs() {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
 
-              <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
+           <InputCondesti id="lastname" label="Apellidos" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required/>
+              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Apellidos
                 </span>
@@ -104,9 +128,10 @@ export default function ContactUs() {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
 
-              <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
+              <InputCondesti id="email" label="Correo electrónico" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required regex={PATTER_EMAIL}/>
+              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Correo electrónico
                 </span>
@@ -120,9 +145,11 @@ export default function ContactUs() {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
 
-              <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
+             <InputCondesti id="cellphone" label="Celular" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError((val: any) => ({...val, [id] : v}))} focus={focusAll} required regex={PATTER_CELL_PHONE}/>
+
+              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Celular
                 </span>
@@ -136,9 +163,10 @@ export default function ContactUs() {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
 
-              <div className="mb-5 w-full">
+             <TexAreaCondesti id="message" label="Mensaje" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required />
+              {/* <div className="mb-5 w-full">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Mensaje
                 </span>
@@ -151,7 +179,7 @@ export default function ContactUs() {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
               {/* <div className="mb-5 w-full grid place-items-center">
                 <ReCAPTCHA
                   ref={recaptchaRef}
@@ -166,7 +194,6 @@ export default function ContactUs() {
           transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
           cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[210px] text-sm h-[46px] md:h-[56px]"
                 type="submit"
-                disabled={!allFieldsFilled}
               >
                 Enviar mensaje
               </button>

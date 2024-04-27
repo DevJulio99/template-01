@@ -22,6 +22,7 @@ const config: Config = {
         gray_15: "#c2c2c3",
         white_10: "#ededed",
         gray_5: "#f2f3f9",
+        red: "#d9534f",
         transparent_black: "rgba(0, 0, 0, 0.4)",
         linear: "linear-gradient(60deg, #50e590, #0796c6)"
       }
