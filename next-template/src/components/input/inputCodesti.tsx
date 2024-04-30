@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 interface Props {
     id: string;
     label: string;
+    name: string;
+    value: string;
     focus?: boolean;
     required?: boolean;
     regex?: RegExp;
+    changeRegex?: RegExp[];
     textoError?: string;
+    setValue: (val: string) => void;
     change?: (e: any) => void;
     onError?:(status: boolean, id: string) => void
 }
@@ -39,6 +43,22 @@ export default function InputCondesti(prop: Props) {
         prop.onError && prop.onError(error, prop.id);
     }
 
+    const handleKey = (e: any) => {
+      detectError();
+    }
+
+    const handleChange = (e: any) => {
+      if(prop.changeRegex && e.target.value.trim().length){
+        for(const reg of prop.changeRegex){
+          if(!reg.test(e.target.value)){
+            e.preventDefault();
+            return
+          }
+        }
+      }
+      prop.setValue(e.target.value);
+    }
+
     useEffect(() => {
        if(prop.focus){
         detectError();
@@ -59,10 +79,11 @@ export default function InputCondesti(prop: Props) {
             id={prop.id}
             className="w-full bg-transparent text-black_10"
             type="text"
-            name="nombres"
-            onChange={prop.change}
-            onKeyDown={detectError}
-            onKeyUp={detectError}
+            name={prop.name}
+            value={prop.value}
+            onChange={handleChange}
+            onKeyDown={handleKey}
+            onKeyUp={handleKey}
             onBlur={detectError}
           />
         </div>

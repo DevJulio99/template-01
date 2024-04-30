@@ -1,6 +1,6 @@
 "use client";
 import { getIcon } from "@/utils/utils";
-import React, { useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import InputCondesti from "../input/inputCodesti";
 import { PATTER_CELL_PHONE, PATTER_EMAIL } from "@/utils/constants";
@@ -11,6 +11,15 @@ export default function ContactUs() {
   const [isVerified, setIsVerified] = useState(false);
   const [focusAll, setFocusAll] = useState(false);
   const recaptchaRef = React.createRef<ReCAPTCHA>();
+  const [submit, setSubmit] = useState(false);
+  const [formValue, setFormValue] = useReducer((prev, next) => {
+     return {...prev, ...next}
+  },{
+    name: '',
+    lastName: '',
+    email: '',
+    cellPhone: ''
+  });
   const [validateFormError, setValidateError] = useState({
     name: true,
     lastname: true,
@@ -44,32 +53,40 @@ export default function ContactUs() {
   }
 
   const handleSubmit = async (event: any) => {
-    const formValid = Object.values(validateFormError).every(x => !x);
-    handleFocus();
-    event.preventDefault();
-    if(formValid){
-      if (allFieldsFilled) {
-        console.log('Información enviada');
-      } else {
-        if (!allFieldsFilled) {
-          window.alert('Por favor, complete todos los campos');
-        } else {
-          window.alert('Complete la verificación reCAPTCHA por favor');
-        }
+    if(!submit) {
+      const formValid = Object.values(validateFormError).every(x => !x);
+      handleFocus();
+      event.preventDefault();
+      if(formValid){
+       setSubmit(true);
+       setTimeout(() => {
+        const action = document.getElementById('frmsub');
+        action?.click();
+       }, 0);
+      //   if (allFieldsFilled) {
+      //     console.log('Información enviada');
+      //   } else {
+      //     if (!allFieldsFilled) {
+      //       window.alert('Por favor, complete todos los campos');
+      //     } else {
+      //       window.alert('Complete la verificación reCAPTCHA por favor');
+      //     }
+      //   }
+      //   const formData = new FormData(event.target);
+      //   const data = Object.fromEntries(formData.entries());
+    
+      //   const emailBody = `${data.mensaje}
+        
+      //   Nombre: ${data.nombres} ${data.apellidos}
+      //   Correo: ${data.correo}
+      //   Celular: ${data.celular}    
+      // `;
+    
+      //   window.location.href = `mailto:devjulio26@gmail.com?subject=Mensaje de contacto&body=${encodeURIComponent(emailBody)}`;
+      //   await clearConsole();
       }
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData.entries());
-  
-      const emailBody = `${data.mensaje}
-      
-      Nombre: ${data.nombres} ${data.apellidos}
-      Correo: ${data.correo}
-      Celular: ${data.celular}    
-    `;
-  
-      window.location.href = `mailto:devjulio26@gmail.com?subject=Mensaje de contacto&body=${encodeURIComponent(emailBody)}`;
-      await clearConsole();
     }
+
   };
 
   return (
@@ -91,12 +108,17 @@ export default function ContactUs() {
               formulario de contacto rápido que aparece a continuación.
             </p>
             <form
+            id="formcontact"
               className="mt-5 md:flex flex-wrap justify-between"
-              onSubmit={handleSubmit}
-              // action="https://formsubmit.co/a2a0b1bfcc5cb6a34bd130c196134440"
+              action="https://formsubmit.co/a2a0b1bfcc5cb6a34bd130c196134440"
               method="POST"
             >
-              <InputCondesti id="name" label="Nombres" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required/>
+              <InputCondesti id="name" label="Nombres" value={formValue.name} change={(e) => setAllFieldsFilled(e.target.value !== "")} 
+                onError={(v, id) => setValidateError(val => ({...val, [id] : v}))}
+                setValue={(val) => setFormValue({name: val})}
+                name="Nombres" 
+                focus={focusAll} 
+                required changeRegex={[/([a-z A-Z À-ÿ])+$/g]}/>
               {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Nombres
@@ -113,7 +135,13 @@ export default function ContactUs() {
                 </div>
               </div> */}
 
-           <InputCondesti id="lastname" label="Apellidos" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required/>
+           <InputCondesti id="lastname" label="Apellidos" value={formValue.lastName} 
+           change={(e) => setAllFieldsFilled(e.target.value !== "")}
+           name="Apellidos"
+           setValue={(val) => setFormValue({lastName: val})} 
+           changeRegex={[/([a-z A-Z À-ÿ])+$/g]} 
+           onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} 
+           focus={focusAll} required/>
               {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Apellidos
@@ -130,7 +158,12 @@ export default function ContactUs() {
                 </div>
               </div> */}
 
-              <InputCondesti id="email" label="Correo electrónico" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required regex={PATTER_EMAIL}/>
+              <InputCondesti id="email" label="Correo electrónico" 
+              value={formValue.email}
+              name="Correo"
+              setValue={(val) => setFormValue({email: val})} 
+               onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} 
+               focus={focusAll} required regex={PATTER_EMAIL}/>
               {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Correo electrónico
@@ -147,7 +180,13 @@ export default function ContactUs() {
                 </div>
               </div> */}
 
-             <InputCondesti id="cellphone" label="Celular" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError((val: any) => ({...val, [id] : v}))} focus={focusAll} required regex={PATTER_CELL_PHONE}/>
+             <InputCondesti id="cellphone" label="Celular"
+             onError={(v, id) => setValidateError((val: any) => ({...val, [id] : v}))}
+             name="Celular"
+             value={formValue.cellPhone}
+             setValue={(val) => setFormValue({cellPhone: val})} 
+             changeRegex={[/^\d{0,9}$/g]} 
+             focus={focusAll} required regex={PATTER_CELL_PHONE}/>
 
               {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
@@ -165,7 +204,9 @@ export default function ContactUs() {
                 </div>
               </div> */}
 
-             <TexAreaCondesti id="message" label="Mensaje" change={(e) => setAllFieldsFilled(e.target.value !== "")} onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required />
+             <TexAreaCondesti id="message" label="Mensaje" change={(e) => setAllFieldsFilled(e.target.value !== "")}
+             name="Mensaje" 
+             onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required />
               {/* <div className="mb-5 w-full">
                 <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
                   Mensaje
@@ -190,10 +231,12 @@ export default function ContactUs() {
               <input type="hidden" name="_template" value="table"></input>
               {/* <input type="hidden" name="_next" value="http://localhost:3000"></input> */}
               <button
+              id="frmsub"
                 className="my-[20px] rounded-[35px] uppercase py-[9px] px-[23px] w-full 
           transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
-          cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[210px] text-sm h-[46px] md:h-[56px]"
-                type="submit"
+          cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[210px] text-sm h-[46px] md:h-[56px] "
+                type={submit ? 'submit' : 'button'}
+                onClick={handleSubmit}
               >
                 Enviar mensaje
               </button>

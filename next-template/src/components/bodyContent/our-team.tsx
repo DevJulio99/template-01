@@ -59,7 +59,7 @@ export default function OurTeam() {
 
   return (
     <>
-      <div id="equipo" className="py-[60px] flex justify-center xl:py-[100px]">
+      {/* <div id="equipo" className="py-[60px] flex justify-center xl:py-[100px]">
         <div className="w-full text-center xl:max-w-[1206px]">
           <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl md:text-[28px] xl:text-[34px]">
             Nuestro equipo
@@ -114,7 +114,7 @@ export default function OurTeam() {
             ))}
           </Carousel>
         </div>
-      </div>
+      </div> */}
 
       {/* <button className="bg-green_10" onClick={() => setActive(0)}>click</button> */}
 

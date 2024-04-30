@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 interface Props {
     id: string;
     label: string;
+    name: string;
     focus?: boolean;
     required?: boolean;
     regex?: RegExp;
@@ -57,7 +58,7 @@ export default function TexAreaCondesti(prop: Props) {
                   <textarea
                   id={prop.id}
                     className="w-full bg-transparent text-black_10 !h-[107px]"
-                    name="mensaje"
+                    name={prop.name}
                     onChange={prop.change}
                     onKeyDown={detectError}
                     onKeyUp={detectError}
