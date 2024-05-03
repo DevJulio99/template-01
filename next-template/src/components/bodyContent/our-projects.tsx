@@ -1,8 +1,14 @@
 "use client";
+if (typeof window !== undefined) {
+   (window as any).$ = (window as any).jQuery = require("jquery");
+}
 import { testimonialsMock } from "@/mock/testimonials.mock";
 import { getIcon } from "@/utils/utils";
-import Carousel from "react-elastic-carousel";
+import OwlCarousel from 'react-owl-carousel';
 import { useState, useEffect } from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 export default function OurProjects() {
   const [numberShow, setNumberShow] = useState(1);
@@ -121,12 +127,20 @@ export default function OurProjects() {
             Testimonios
           </h3>
           <div className="divider !mt-[20px]"></div>
-          <Carousel
-            itemsToShow={numberShow}
-            pagination={true}
-            enableAutoPlay={true}
-            showArrows={false}
-          >
+            <OwlCarousel className='owl-theme' loop margin={10}  responsive={
+              {
+                0:{
+                  items:1,
+                  nav: false
+               },
+               1024: {
+                items: 2
+               },
+               1200: {
+                items: 3
+               }
+              }
+            }>
             {testimonials.map((x, index) => (
               <div key={index} className="lg:mr-[30px] text-white">
                 <div className="mt-[40px] text-justify">
@@ -136,7 +150,7 @@ export default function OurProjects() {
                   </p>
                 </div>
                 <div className="flex mt-5">
-                  <img className="rounded-full" src={x.img} alt="user" />
+                  <img className="!w-[80px] !w-[80px] rounded-full" src={x.img} alt="user" />
                   <div className="ml-5 text-start">
                     <p className="text-blue_5 font-normal text-[15px] md:text-[20px]">
                       {x.name}
@@ -148,7 +162,7 @@ export default function OurProjects() {
                 </div>
               </div>
             ))}
-          </Carousel>
+        </OwlCarousel>
         </div>
       </div>
 
