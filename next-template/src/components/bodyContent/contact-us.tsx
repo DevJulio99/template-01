@@ -6,13 +6,20 @@ import InputCondesti from "../input/inputCodesti";
 import { PATTER_CELL_PHONE, PATTER_EMAIL } from "@/utils/constants";
 import TexAreaCondesti from "../textArea/textAreaCodesti";
 
+interface FormContact {
+  name?: string;
+  lastName?: string;
+  email?: string;
+  cellPhone?:string;
+}
+
 export default function ContactUs() {
 
   const [isVerified, setIsVerified] = useState(false);
   const [focusAll, setFocusAll] = useState(false);
   const recaptchaRef = React.createRef<ReCAPTCHA>();
   const [submit, setSubmit] = useState(false);
-  const [formValue, setFormValue] = useReducer((prev, next) => {
+  const [formValue, setFormValue] = useReducer((prev: FormContact, next: FormContact) => {
      return {...prev, ...next}
   },{
     name: '',
@@ -113,7 +120,7 @@ export default function ContactUs() {
               action="https://formsubmit.co/a2a0b1bfcc5cb6a34bd130c196134440"
               method="POST"
             >
-              <InputCondesti id="name" label="Nombres" value={formValue.name} change={(e) => setAllFieldsFilled(e.target.value !== "")} 
+              <InputCondesti id="name" label="Nombres" value={formValue.name ?? ''} change={(e) => setAllFieldsFilled(e.target.value !== "")} 
                 onError={(v, id) => setValidateError(val => ({...val, [id] : v}))}
                 setValue={(val) => setFormValue({name: val})}
                 name="Nombres" 
@@ -135,7 +142,7 @@ export default function ContactUs() {
                 </div>
               </div> */}
 
-           <InputCondesti id="lastname" label="Apellidos" value={formValue.lastName} 
+           <InputCondesti id="lastname" label="Apellidos" value={formValue.lastName ?? ''} 
            change={(e) => setAllFieldsFilled(e.target.value !== "")}
            name="Apellidos"
            setValue={(val) => setFormValue({lastName: val})} 
@@ -159,7 +166,7 @@ export default function ContactUs() {
               </div> */}
 
               <InputCondesti id="email" label="Correo electrónico" 
-              value={formValue.email}
+              value={formValue.email ?? ''}
               name="Correo"
               setValue={(val) => setFormValue({email: val})} 
                onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} 
@@ -183,7 +190,7 @@ export default function ContactUs() {
              <InputCondesti id="cellphone" label="Celular"
              onError={(v, id) => setValidateError((val: any) => ({...val, [id] : v}))}
              name="Celular"
-             value={formValue.cellPhone}
+             value={formValue.cellPhone ?? ''}
              setValue={(val) => setFormValue({cellPhone: val})} 
              changeRegex={[/^\d{0,9}$/g]} 
              focus={focusAll} required regex={PATTER_CELL_PHONE}/>

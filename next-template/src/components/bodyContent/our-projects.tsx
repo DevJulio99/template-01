@@ -1,17 +1,13 @@
 "use client";
-if (typeof window !== undefined) {
-   (window as any).$ = (window as any).jQuery = require("jquery");
-}
 import { testimonialsMock } from "@/mock/testimonials.mock";
 import { getIcon } from "@/utils/utils";
-import OwlCarousel from 'react-owl-carousel';
-import { useState, useEffect } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import dynamic from 'next/dynamic'
+ 
+const Carousel = dynamic(() => import('../carousel/carousel-codesti'), {
+  ssr: false,
+})
 
 export default function OurProjects() {
-  const [numberShow, setNumberShow] = useState(1);
   const projects = [
     {
       description:
@@ -65,23 +61,6 @@ export default function OurProjects() {
     },
   ];
 
-  const itemsShow = () => {
-    let show = 1;
-     if(window.innerWidth >= 768){
-      show = 2
-     }
-     if(window.innerWidth >= 1200){
-      show = 3
-     }
-     setNumberShow(show);
-  }
-
-  useEffect(() => {
-    itemsShow();
-    window.addEventListener("resize", () => {
-      itemsShow();
-    });
-  }, []);
   return (
     <>
       <div id="proyectos" className="py-[60px] px-[15px] text-center flex justify-center xl:py-[100px]">
@@ -127,42 +106,29 @@ export default function OurProjects() {
             Testimonios
           </h3>
           <div className="divider !mt-[20px]"></div>
-            <OwlCarousel className='owl-theme' loop margin={10}  responsive={
-              {
-                0:{
-                  items:1,
-                  nav: false
-               },
-               1024: {
-                items: 2
-               },
-               1200: {
-                items: 3
-               }
-              }
-            }>
-            {testimonials.map((x, index) => (
-              <div key={index} className="lg:mr-[30px] text-white">
-                <div className="mt-[40px] text-justify">
-                  {getIcon(40, "#1cd8c9", "quoteLeft")}
-                  <p className="mt-[25px] text-[18px] font-light md:text-[20px]">
-                    {x.description}
-                  </p>
-                </div>
-                <div className="flex mt-5">
-                  <img className="!w-[80px] !w-[80px] rounded-full" src={x.img} alt="user" />
-                  <div className="ml-5 text-start">
-                    <p className="text-blue_5 font-normal text-[15px] md:text-[20px]">
-                      {x.name}
-                    </p>
-                    <p className="font-normal text-gray_15 text-[15px]">
-                      {x.position}
+          <Carousel>
+          {testimonials.map((x, index) => (
+                <div key={index} className="lg:mr-[30px] text-white">
+                  <div className="mt-[40px] text-justify">
+                    {getIcon(40, "#1cd8c9", "quoteLeft")}
+                    <p className="mt-[25px] text-[18px] font-light md:text-[20px]">
+                      {x.description}
                     </p>
                   </div>
+                  <div className="flex mt-5">
+                    <img className="!w-[80px] !w-[80px] rounded-full" src={x.img} alt="user" />
+                    <div className="ml-5 text-start">
+                      <p className="text-blue_5 font-normal text-[15px] md:text-[20px]">
+                        {x.name}
+                      </p>
+                      <p className="font-normal text-gray_15 text-[15px]">
+                        {x.position}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
-        </OwlCarousel>
+              ))}
+          </Carousel>
         </div>
       </div>
 
