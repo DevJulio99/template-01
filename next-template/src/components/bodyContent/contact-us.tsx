@@ -181,7 +181,7 @@ export default function ContactUs() {
               <input
                 type="hidden"
                 name="_next"
-                value="http://localhost:3000"
+                value="https://codesti.netlify.app"
               ></input>
               <button
                 id="frmsub"
