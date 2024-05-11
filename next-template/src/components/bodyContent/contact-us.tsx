@@ -14,10 +14,10 @@ interface FormContact {
 }
 
 export default function ContactUs() {
-
-  const [isVerified, setIsVerified] = useState(false);
+    
+  // const [isVerified, setIsVerified] = useState(false);
   const [focusAll, setFocusAll] = useState(false);
-  const recaptchaRef = React.createRef<ReCAPTCHA>();
+  // const recaptchaRef = React.createRef<ReCAPTCHA>();
   const [submit, setSubmit] = useState(false);
   const [formValue, setFormValue] = useReducer((prev: FormContact, next: FormContact) => {
      return {...prev, ...next}
@@ -37,11 +37,11 @@ export default function ContactUs() {
 
   const [allFieldsFilled, setAllFieldsFilled] = useState(false);
 
-  const handleVerify = (token: string | null) => {
-    if (token) {
-      setIsVerified(true);
-    }
-  }
+  // const handleVerify = (token: string | null) => {
+  //   if (token) {
+  //     setIsVerified(true);
+  //   }
+  // }
 
   const clearConsole = () => {
     return new Promise((resolve) => {
@@ -70,30 +70,8 @@ export default function ContactUs() {
         const action = document.getElementById('frmsub');
         action?.click();
        }, 0);
-      //   if (allFieldsFilled) {
-      //     console.log('Información enviada');
-      //   } else {
-      //     if (!allFieldsFilled) {
-      //       window.alert('Por favor, complete todos los campos');
-      //     } else {
-      //       window.alert('Complete la verificación reCAPTCHA por favor');
-      //     }
-      //   }
-      //   const formData = new FormData(event.target);
-      //   const data = Object.fromEntries(formData.entries());
-    
-      //   const emailBody = `${data.mensaje}
-        
-      //   Nombre: ${data.nombres} ${data.apellidos}
-      //   Correo: ${data.correo}
-      //   Celular: ${data.celular}    
-      // `;
-    
-      //   window.location.href = `mailto:devjulio26@gmail.com?subject=Mensaje de contacto&body=${encodeURIComponent(emailBody)}`;
-      //   await clearConsole();
       }
     }
-
   };
 
   return (
@@ -115,119 +93,82 @@ export default function ContactUs() {
               formulario de contacto rápido que aparece a continuación.
             </p>
             <form
-            id="formcontact"
+              id="formcontact"
               className="mt-5 md:flex flex-wrap justify-between"
               action="https://formsubmit.co/a2a0b1bfcc5cb6a34bd130c196134440"
               method="POST"
             >
-              <InputCondesti id="name" label="Nombres" value={formValue.name ?? ''} change={(e) => setAllFieldsFilled(e.target.value !== "")} 
-                onError={(v, id) => setValidateError(val => ({...val, [id] : v}))}
-                setValue={(val) => setFormValue({name: val})}
-                name="Nombres" 
-                focus={focusAll} 
-                required changeRegex={[/([a-z A-Z À-ÿ])+$/g]}/>
-              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
-                <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
-                  Nombres
-                </span>
-                <div className="rounded-[35px] bg-gray_5 py-[18px] px-[25px]">
-                  <input
-                    className="w-full bg-transparent text-black_10"
-                    type="text"
-                    name="nombres"
-                    onChange={(e) => {
-                      setAllFieldsFilled(e.target.value !== "");
-                    }}
-                  />
-                </div>
-              </div> */}
+              <InputCondesti
+                id="name"
+                label="Nombres"
+                value={formValue.name ?? ""}
+                change={(e) => setAllFieldsFilled(e.target.value !== "")}
+                onError={(v, id) =>
+                  setValidateError((val) => ({ ...val, [id]: v }))
+                }
+                setValue={(val) => setFormValue({ name: val })}
+                name="Nombres"
+                focus={focusAll}
+                required
+                changeRegex={[/([a-z A-Z À-ÿ])+$/g]}
+              />
 
-           <InputCondesti id="lastname" label="Apellidos" value={formValue.lastName ?? ''} 
-           change={(e) => setAllFieldsFilled(e.target.value !== "")}
-           name="Apellidos"
-           setValue={(val) => setFormValue({lastName: val})} 
-           changeRegex={[/([a-z A-Z À-ÿ])+$/g]} 
-           onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} 
-           focus={focusAll} required/>
-              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
-                <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
-                  Apellidos
-                </span>
-                <div className="rounded-[35px] bg-gray_5 py-[18px] px-[25px]">
-                  <input
-                    className="w-full bg-transparent text-black_10"
-                    type="text"
-                    name="apellidos"
-                    onChange={(e) => {
-                      setAllFieldsFilled(e.target.value !== "");
-                    }}
-                  />
-                </div>
-              </div> */}
+              <InputCondesti
+                id="lastname"
+                label="Apellidos"
+                value={formValue.lastName ?? ""}
+                change={(e) => setAllFieldsFilled(e.target.value !== "")}
+                name="Apellidos"
+                setValue={(val) => setFormValue({ lastName: val })}
+                changeRegex={[/([a-z A-Z À-ÿ])+$/g]}
+                onError={(v, id) =>
+                  setValidateError((val) => ({ ...val, [id]: v }))
+                }
+                focus={focusAll}
+                required
+              />
 
-              <InputCondesti id="email" label="Correo electrónico" 
-              value={formValue.email ?? ''}
-              name="Correo"
-              setValue={(val) => setFormValue({email: val})} 
-               onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} 
-               focus={focusAll} required regex={PATTER_EMAIL}/>
-              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
-                <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
-                  Correo electrónico
-                </span>
-                <div className="rounded-[35px] bg-gray_5 py-[18px] px-[25px]">
-                  <input
-                    className="w-full bg-transparent text-black_10"
-                    type="text"
-                    name="correo"
-                    onChange={(e) => {
-                      setAllFieldsFilled(e.target.value !== "");
-                    }}
-                  />
-                </div>
-              </div> */}
+              <InputCondesti
+                id="email"
+                label="Correo electrónico"
+                value={formValue.email ?? ""}
+                name="Correo"
+                setValue={(val) => setFormValue({ email: val })}
+                onError={(v, id) =>
+                  setValidateError((val) => ({ ...val, [id]: v }))
+                }
+                focus={focusAll}
+                required
+                regex={PATTER_EMAIL}
+              />
 
-             <InputCondesti id="cellphone" label="Celular"
-             onError={(v, id) => setValidateError((val: any) => ({...val, [id] : v}))}
-             name="Celular"
-             value={formValue.cellPhone ?? ''}
-             setValue={(val) => setFormValue({cellPhone: val})} 
-             changeRegex={[/^\d{0,9}$/g]} 
-             focus={focusAll} required regex={PATTER_CELL_PHONE}/>
+              <InputCondesti
+                id="cellphone"
+                label="Celular"
+                onError={(v, id) =>
+                  setValidateError((val: any) => ({ ...val, [id]: v }))
+                }
+                name="Celular"
+                value={formValue.cellPhone ?? ""}
+                setValue={(val) => setFormValue({ cellPhone: val })}
+                changeRegex={[/^\d{0,9}$/g]}
+                focus={focusAll}
+                required
+                regex={PATTER_CELL_PHONE}
+              />
 
-              {/* <div className="mb-5 w-full md:max-w-[333px] lg:max-w-[292px] xl:max-w-[321px]">
-                <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
-                  Celular
-                </span>
-                <div className="rounded-[35px] bg-gray_5 py-[18px] px-[25px]">
-                  <input
-                    className="w-full bg-transparent text-black_10"
-                    type="text"
-                    name="celular"
-                    onChange={(e) => {
-                      setAllFieldsFilled(e.target.value !== "");
-                    }}
-                  />
-                </div>
-              </div> */}
+              <TexAreaCondesti
+                id="message"
+                label="Mensaje"
+                change={(e) => setAllFieldsFilled(e.target.value !== "")}
+                name="Mensaje"
+                onError={(v, id) =>
+                  setValidateError((val) => ({ ...val, [id]: v }))
+                }
+                focus={focusAll}
+                required
+              />
 
-             <TexAreaCondesti id="message" label="Mensaje" change={(e) => setAllFieldsFilled(e.target.value !== "")}
-             name="Mensaje" 
-             onError={(v, id) => setValidateError(val => ({...val, [id] : v}))} focus={focusAll} required />
-              {/* <div className="mb-5 w-full">
-                <span className="pl-[21px] mb-[3px] text-[12px] text-xs leading-6 font-light tracking-[.02em] text-gray_10">
-                  Mensaje
-                </span>
-                <div className="rounded-[35px] bg-gray_5 py-[18px] px-[25px]">
-                  <textarea
-                    className="w-full bg-transparent text-black_10 !h-[107px]"
-                    name="mensaje"
-                    onChange={(e) => {
-                      setAllFieldsFilled(e.target.value !== "");
-                    }}
-                  />
-                </div>
-              </div> */}
               {/* <div className="mb-5 w-full grid place-items-center">
                 <ReCAPTCHA
                   ref={recaptchaRef}
@@ -236,13 +177,18 @@ export default function ContactUs() {
                 />
               </div> */}
               <input type="hidden" name="_template" value="table"></input>
-              {/* <input type="hidden" name="_next" value="http://localhost:3000"></input> */}
+              <input type="hidden" name="_captcha" value="false"></input>
+              <input
+                type="hidden"
+                name="_next"
+                value="http://localhost:3000"
+              ></input>
               <button
-              id="frmsub"
+                id="frmsub"
                 className="my-[20px] rounded-[35px] uppercase py-[9px] px-[23px] w-full 
           transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
           cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[210px] text-sm h-[46px] md:h-[56px] "
-                type={submit ? 'submit' : 'button'}
+                type={submit ? "submit" : "button"}
                 onClick={handleSubmit}
               >
                 Enviar mensaje
@@ -289,7 +235,7 @@ export default function ContactUs() {
                   {getIcon(20, "#0796c6", "mailOpenFont")}
                 </span>
                 <span className="text-gray_10 px-[6px] text-[15px] leading-[1.6] font-light">
-                  mail@gmail.com
+                  codesti@gmail.com
                 </span>
               </div>
             </div>
@@ -312,9 +258,9 @@ export default function ContactUs() {
       </div>
 
       <iframe
-        src="https://www.google.com/maps/d/embed?mid=1-VlXsvMWMr8EotfMcIwYKt-1SrI&ll=-12.031106727415615%2C-76.88630290942494&z=19"
+        src="https://www.google.com/maps/d/embed?mid=1IiMHfBFc2QDukPSDS0KTWOVWWnLnzIw&ehbc=2E312F&noprof=1"
         width="100%"
-        height="500px"
+        height="500"
       ></iframe>
     </>
   );

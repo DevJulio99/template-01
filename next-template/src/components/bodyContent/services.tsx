@@ -7,7 +7,7 @@ export default function Services() {
   const services = servicesMock;
   return (
     <>
-      <div className="py-[60px] px-[15px] text-center">
+      {/* <div className="py-[60px] px-[15px] text-center">
         <div className="mb-[50px] md:mb-0">
           <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl">
             Planes
@@ -40,7 +40,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="container-consultation py-[60px] py-[100px]">
         <div className="px-[12px] flex justify-center">
           <div

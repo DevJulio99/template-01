@@ -1,6 +1,5 @@
 "use client";
 import { getIcon } from "@/utils/utils";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -11,7 +10,7 @@ export default function Navbar() {
     "home",
     "sobre nosotros",
     "servicios",
-    "nuestro equipo",
+    // "nuestro equipo",
     "proyectos",
     "contacto",
   ];

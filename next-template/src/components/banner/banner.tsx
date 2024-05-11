@@ -1,7 +1,16 @@
+"use client"
+
 import Image from "next/image";
 import "./banner.scss";
+import { useRouter } from 'next/navigation'
 
 export default function Banner() {
+  const router = useRouter();
+  
+  const scrollToContacto = () => {
+    router.push('#contacto');
+  }
+  
   return (
     <div className="div-banner relative py-[60px] flex justify-center lg:py-[120px] xl:py-[130px]">
       <div className="text-center px-[15px] md:max-w-[604px] lg:max-w-[774px] xl:max-w-[594px]">
@@ -21,6 +30,7 @@ export default function Banner() {
             className="rounded-[35px] uppercase py-[9px] px-[30px] w-full 
           transition-all duration-[.25s] ease-linear bg-green_10 text-white border-2 border-transparent 
           cursor-pointer text-[15px] font-medium tracking-[0.12em] hover:bg-blue_10 md:w-[261px] lg:w-[273px]"
+          onClick={scrollToContacto}
           >
             Consulta gratuita
           </button>
@@ -28,6 +38,7 @@ export default function Banner() {
             className="rounded-[35px] uppercase py-[9px] px-[30px] w-full 
           transition-all duration-[.25s] ease-linear border-2 cursor-pointer text-white text-[15px] font-medium 
           tracking-[0.12em] hover:bg-blue_10 hover:border-transparent md:w-[210px] lg:w-[230px]"
+          onClick={scrollToContacto}
           >
             Obtener más información
           </button>

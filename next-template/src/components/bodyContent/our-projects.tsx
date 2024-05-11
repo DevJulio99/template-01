@@ -45,18 +45,18 @@ export default function OurProjects() {
 
   const news = [
     {
-      date: "April 13, 2021 at 12:15 pm",
-      title: "Google Rethinking Payday Loans & Doorway Pages?",
+      date: "10 de mayo de 2024 a las 12:15 pm",
+      title: "IA revolucionando el desarrollo de software: ¿Adiós a la programación manual?",
       img: "/images/home-1.jpg",
     },
     {
-      date: "April 13, 2021 at 12:15 pm",
-      title: "Benefits of Using Modern Promotion Technologies",
+      date: "10 de mayo de 2024 a las 12:15 pm",
+      title: "Ciberseguridad en el desarrollo de software: Claves para proteger aplicaciones",
       img: "/images/home-2.jpg",
     },
     {
-      date: "April 13, 2021 at 12:15 pm",
-      title: "How Google Search Works in 2021",
+      date: "10 de mayo de 2024 a las 12:15 pm",
+      title: "Tendencias en desarrollo de software para 2024: ¿Qué debes saber?",
       img: "/images/home-3.jpg",
     },
   ];
@@ -134,7 +134,7 @@ export default function OurProjects() {
 
       <div className="py-[60px] px-[15px] text-center xl:py-[100px]">
         <h3 className="text-black_10 font-bold tracking-[.02em] text-2xl md:text-[28px] xl:text-[34px]">
-          Latest News
+          Últimas Noticias
         </h3>
         <div className="divider !mt-[20px]"></div>
         <div className="w-full flex justify-center">
@@ -154,13 +154,13 @@ export default function OurProjects() {
                     alt={`img-home-${index + 1}`}
                   />
                   <div className="bg-transparent_black absolute top-0 w-full h-full flex items-center justify-center transition-all duration-[550ms] lg:opacity-0 hover:opacity-100">
-                    <button
+                    {/* <button
                       className="mt-[18px] rounded-[35px] uppercase py-[9px] px-[23px] w-full 
             transition-all duration-[.25s] ease-linear btn-gradient text-white border-2 border-transparent 
             cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[151px] text-sm"
                     >
-                      book now
-                    </button>
+                      Ver más
+                    </button> */}
                   </div>
                 </div>
                 <div className="mt-[25px]">
@@ -184,7 +184,7 @@ export default function OurProjects() {
           cursor-pointer text-[15px] font-medium tracking-[0.12em] max-w-[257px] text-sm h-[46px] md:mt-[35px] md:h-[56px]
           md:max-w-[273px]"
         >
-          view all blog posts
+          Ver todas las noticias
         </button>
       </div>
 

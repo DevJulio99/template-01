@@ -1,5 +1,5 @@
 "use client";
-import Carousel from "react-elastic-carousel";
+// import Carousel from "react-elastic-carousel";
 import { getIcon } from "@/utils/utils";
 import { useEffect, useState } from 'react';
 

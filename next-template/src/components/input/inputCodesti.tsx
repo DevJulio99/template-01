@@ -29,7 +29,7 @@ export default function InputCondesti(prop: Props) {
            return
         }
         if(prop.regex && !prop.regex.test(val)){
-         handleError(!prop.regex.test(val),'El Campo no es valido')
+         handleError(!prop.regex.test(val),'El campo no es válido')
          return
         }
         handleError(false);
